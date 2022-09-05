@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <header><%- include('../partials/Nav'); %></header>
     <% for (var i=0; i < data.length; i++) { %>
         <section class="test">
             <div>
@@ -58,10 +59,15 @@ new Chart("barChart", {
   },
   options: {
     plugins: {
+        title: {
+                display: true,
+                text: 'Évolution de la valeur mesurée !'
+            },
       datalabels: {
         color: 'white',
         font: {
           weight: 'bold'
+          
         }
       }
     }
