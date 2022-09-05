@@ -36,8 +36,21 @@ app.get("/forms", function (req, res) {
   return res.render("pages/Forms");
 });
 
+app.get("/data/forms", function (req, res) {
+  console.log(req.query);
+  con.query(
+    `INSERT IGNORE INTO hacketon (id, module, temp, vitesse) VALUES (" ", "${
+      req.query.module
+    }", "${Math.floor(Math.random() * 100)}", "${Math.floor(
+      Math.random() * 100
+    )}")`
+  ),
+    function (err, result) {
+      if (err) throw err;
+    };
+  res.render("pages/Forms");
+});
 
 app.listen(portApp, () =>
   console.log("Le serveur est lancer sur le port" + " " + portApp)
 );
-
