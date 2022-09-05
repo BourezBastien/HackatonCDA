@@ -1,0 +1,19 @@
+{
+  "name": "unplug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "sass": "sass --watch views/scss/main.scss views/scss/main.css"
+  },
+  "author": "Uranium#9457",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "sass": "^1.49.9"
+  }
+}
