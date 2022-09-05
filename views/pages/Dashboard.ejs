@@ -21,7 +21,7 @@
                 <%= data[i].id %>
             </div>
             <div>
-                <h1>Donée envoyer</h1>
+                <h1>Donnée envoyer</h1>
                 <%= (Math.floor(Math.random()* 10000)) %>
             </div>
             <div>
@@ -34,5 +34,38 @@
             </div>
         </section>
     <% } %>
+    <canvas id="barChart"></canvas>
+
+    
 </body> 
+
+
+<script src="https://code.jscharting.com/latest/jscharting.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+<script>
+Chart.register(ChartDataLabels);
+new Chart("barChart", {
+    type: 'line',
+  data: {
+    labels: [new Date(), new Date(), new Date()],
+    datasets: [{
+      label: 'Data',
+      data: [Math.floor(Math.random()* 100), Math.floor(Math.random()* 100), Math.floor(Math.random()* 100)],
+      backgroundColor: 'rgb(124, 124, 255)',
+      barPercentage: 0.5
+    }]
+  },
+  options: {
+    plugins: {
+      datalabels: {
+        color: 'white',
+        font: {
+          weight: 'bold'
+        }
+      }
+    }
+  }
+});
+</script>
 </html>
