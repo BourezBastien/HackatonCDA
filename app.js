@@ -28,9 +28,21 @@ app.listen(portApp, () =>
   console.log("Le serveur est lancer sur le port" + " " + portApp)
 );
 
+// app.get("/", function (req, res) {
+//   return res.render("pages/Dashboard", { title: "Dashboard", nom: "Hackaton" });
+// });
+
 app.get("/", function (req, res) {
-  return res.render("pages/Dashboard", { title: "Dashboard", nom: "Hackaton" });
+  con.query("SELECT * FROM hacketon", function (err, result) {
+    if (err) throw err;
+    console.log(result);
+    return res.render("pages/Dashboard", { title: "Dashboard", data: result });
+  });
 });
+
+app.listen(portApp, () =>
+  console.log("Le serveur est lancer sur le port" + " " + portApp)
+);
 
 app.get("/forms", function (req, res) {
   return res.render("pages/Forms");
