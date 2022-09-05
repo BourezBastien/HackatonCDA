@@ -30,7 +30,6 @@ con.connect(function (err) {
 app.get('/', function (req, res) {
     con.query('SELECT * FROM hacketon', function (err, result) {
         if (err) throw err;
-        console.log(result)
         return res.render('pages/Dashboard', { title: 'Dashboard', data: result});
     });
 }); 

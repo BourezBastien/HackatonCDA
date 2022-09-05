@@ -8,11 +8,20 @@
 </head>
 <body>
     <% for (var i=0; i < data.length; i++) { %>
-        <%= data[i].id %>
-        <%= data[i].module %>
-        <%= data[i].temp %>
-        <%= data[i].vitesse %>
-        <%= data[i].id %>
+        <section class="test">
+            <div>
+                <div>Nom du Module</div>
+                <%= data[i].module %>
+            </div>
+            <div>
+                <div>Température</div>
+                <%= data[i].temp %>
+            </div>
+            <div>
+                <div>Vitesse</div>
+                <%= data[i].id %>
+            </div>
+        </section>
     <% } %>
 </body> 
 </html>
