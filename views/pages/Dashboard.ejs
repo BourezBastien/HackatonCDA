@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../main.css">
 </head>
 <body>
     <% for (var i=0; i < data.length; i++) { %>
         <section class="test">
             <div>
-                <div>Nom du Module</div>
+                <h1>Module Numéro <%= data[i].id %></h1>
                 <%= data[i].module %>
             </div>
             <div>
-                <div>Température</div>
+                <h1>Température</h1>
                 <%= data[i].temp %>
             </div>
             <div>
-                <div>Vitesse</div>
+                <h1>Vitesse</h1>
                 <%= data[i].id %>
+            </div>
+            <div>
+                <h1>Donée envoyer</h1>
+                <%= (Math.floor(Math.random()* 10000)) %>
+            </div>
+            <div>
+                <h1>Durée de fonctionnement</h1>
+                <%= (Math.floor(Math.random()* 1000))%>
+            </div>
+            <div>
+                <h1>Status</h1>
+                <%= (Math.random()>=0.5)? "Online" : "Offline" %>
             </div>
         </section>
     <% } %>

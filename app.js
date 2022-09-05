@@ -1,7 +1,7 @@
 const express = require("express");
 const mysql = require("mysql");
 
-const portApp = 5500;
+const portApp = 5000;
 
 const app = express();
 app.set("view engine", "ejs");
@@ -27,7 +27,6 @@ con.connect(function (err) {
 app.get("/", function (req, res) {
   con.query("SELECT * FROM hacketon", function (err, result) {
     if (err) throw err;
-    console.log(result);
     return res.render("pages/Dashboard", { title: "Dashboard", data: result });
   });
 });
