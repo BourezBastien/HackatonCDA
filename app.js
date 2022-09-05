@@ -1,7 +1,7 @@
 const express = require("express");
 const mysql = require("mysql");
 
-const portApp = 5500;
+const portApp = 5000;
 
 const app = express();
 app.set("view engine", "ejs");
